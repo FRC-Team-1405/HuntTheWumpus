@@ -2,6 +2,7 @@ public class HuntTheWumpus {
     public static void main(String[] args) {
         // create the cave
         Cave cave = new Cave();
+        Hunter hunter = new Hunter(cave, 1);
 
         IO.outputInstructions();
 
@@ -9,10 +10,11 @@ public class HuntTheWumpus {
 
         char action = IO.inputAction();
         if (action == 'M') {
-            int roomID = IO.inputMoveTo(cave.getPaths(1));
-            System.out.println("Player wants to move to " + roomID);
+            hunter.move();
+            int roomID = hunter.getRoomID();
+            IO.outputRoom(roomID, cave.getPaths(roomID));
         } else if (action == 'S') {
-            int[] path = IO.inputArrowPath();
+            int[] path = hunter.shootArrow();
             System.out.println("Player wants to shoot and arrow:");
             for (int roomID : path) {
                 System.out.println("Room " + roomID);
@@ -20,7 +22,9 @@ public class HuntTheWumpus {
             System.out.println();
         }
 
-        IO.outputKilledTheWumpus(20);
+        hunter.eatenByWumpus();
+        if (!hunter.isAlive() && hunter.wasEatenByWumpus())
+            IO.outputEatenByWumpus();
 
     }
 }

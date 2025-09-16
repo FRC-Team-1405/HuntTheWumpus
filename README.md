@@ -1,4 +1,5 @@
 # HuntTheWumpus
+
 A recreation of the 'Hunt the Wumpus' used to teach new students basic programming.
 
 # [Hunt the Wumpus](https://en.wikipedia.org/wiki/Hunt_the_Wumpus)

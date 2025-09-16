@@ -25,7 +25,7 @@ When shooting and arrow the player decide how far it will travel (1 - 5) and the
 
 If you fire an arrow it might wake up the Wumpus. A Wumpus that is awake may or may not move to a different room. The Wumpus cannot fall into the pits or be carried by bats. If it enters the same room as the player, it will eat the player.
 
-#[Original sample run](https://www.atariarchives.org/bcc1/showpage.php?page=248)
+# [Original sample run](https://www.atariarchives.org/bcc1/showpage.php?page=248)
 
 ```
 ***

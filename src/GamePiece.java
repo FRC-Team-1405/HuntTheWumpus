@@ -53,7 +53,7 @@ public abstract class GamePiece {
     /**
      * Set the roomID of the piece. This is to allow
      * a piece to move to a room not connected to the
-     * current ruom.
+     * current room.
      * 
      * @param roomID the new location
      */

@@ -109,7 +109,7 @@ public class Hunter extends GamePiece {
         int pathStart = roomID;
         for (int index = 0; index < path.length; index++) {
             if (!cave.isPathValid(pathStart, path[index])) {
-                // invalic destination so pick a new one
+                // invalid destination so pick a new one
                 int[] rooms = cave.getPaths(pathStart);
                 path[index] = rooms[new Random().nextInt(rooms.length)];
             }

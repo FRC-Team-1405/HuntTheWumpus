@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Each rooom in the cave has a unique ID (1-20) and is arranged
+ * Each room in the cave has a unique ID (1-20) and is arranged
  * in the shape of a dodecahedron.
  */
 public class Cave {

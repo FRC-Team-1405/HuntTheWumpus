@@ -22,9 +22,26 @@ public class HuntTheWumpus {
             System.out.println();
         }
 
-        hunter.eatenByWumpus();
-        if (!hunter.isAlive() && hunter.wasEatenByWumpus())
+        System.out.println();
+
+        System.out.println("Testing wumpus encounter.");
+        Wumpus wumpus = new Wumpus(cave, 20);
+        hunter.setRoomID(20);
+        wumpus.encounter(hunter);
+        if (hunter.wasEatenByWumpus())
             IO.outputEatenByWumpus();
 
+        System.out.println("Testing pit encounter.");
+        Pit pit = new Pit(cave, 2);
+        hunter.setRoomID(2);
+        pit.encounter(hunter);
+        if (hunter.fellIntoPit())
+            IO.outputFellIntoPit();
+
+        System.out.println("Testing bat encounter.");
+        Bat bat = new Bat(cave, 5);
+        hunter.setRoomID(5);
+        bat.encounter(hunter);
+        IO.outputRoom(hunter.getRoomID(), cave.getPaths(hunter.getRoomID()));
     }
 }

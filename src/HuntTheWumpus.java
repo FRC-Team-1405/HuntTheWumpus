@@ -3,13 +3,24 @@ public class HuntTheWumpus {
         // create the cave
         Cave cave = new Cave();
 
-        // print out each room and it's connections
-        for (int roomID : cave.getAllRooms()) {
-            System.out.print("Room\t" + roomID);
-            for (int path : cave.getPaths(roomID)) {
-                System.out.print("\t" + path);
+        IO.outputInstructions();
+
+        IO.outputRoom(1, cave.getPaths(1));
+
+        char action = IO.inputAction();
+        if (action == 'M') {
+            int roomID = IO.inputMoveTo(cave.getPaths(1));
+            System.out.println("Player wants to move to " + roomID);
+        } else if (action == 'S') {
+            int[] path = IO.inputArrowPath();
+            System.out.println("Player wants to shoot and arrow:");
+            for (int roomID : path) {
+                System.out.println("Room " + roomID);
             }
             System.out.println();
         }
+
+        IO.outputKilledTheWumpus(20);
+
     }
 }

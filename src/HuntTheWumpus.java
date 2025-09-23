@@ -4,11 +4,13 @@ import java.util.List;
 
 public class HuntTheWumpus {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Cave cave = new Cave();
+        int[] rooms = cave.getPaths(1);
 
-        int[] myArray = new int[] { 18, 99, 34 }
-        List<Integer> lst; = new Has
-        List<Boolean> lst2;
-     map<String, Integer> map = HashMap<String, Integer>   
+        boolean pathExists = cave.isPathValid(1, 3);
+        System.out.println(pathExists);
+        System.out.println(rooms[0]);
+        System.out.println(rooms[1]);
+        System.out.println(rooms[2]);
     }
 }

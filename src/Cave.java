@@ -30,4 +30,14 @@ public class Cave {
         }
         return false;
     }
+
+    public int[] getAllRooms() {
+        int[] result = new int[rooms.size()];
+        int index = 0;
+        for (Integer roomID : rooms.keySet()) {
+            result[index++] = roomID.intValue();
+        }
+        return result;
+
+    }
 }

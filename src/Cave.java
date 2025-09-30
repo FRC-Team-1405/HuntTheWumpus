@@ -8,14 +8,24 @@ import java.util.Map;
 public class Cave {
     private Map<Integer, int[]> rooms = new HashMap<Integer, int[]>();
 
+    // Map that lists each room and its respective keys
     public Cave() {
         rooms.put(Integer.valueOf(1), new int[] { 5, 8, 2 });
         rooms.put(Integer.valueOf(2), new int[] { 1, 10, 3 });
         rooms.put(Integer.valueOf(3), new int[] { 2, 12, 4 });
     }
 
-    public int[] getpaths(int roomID) {
+    public int[] getPaths(int roomID) {
         return rooms.get(Integer.valueOf(roomID));
+    }
+
+    public int[] getAllRooms() {
+        int[] result = new int[rooms.size()];
+        int index = 0;
+        for (Integer roomID : rooms.keySet()) {
+            result[index++] = roomID.intValue();
+        }
+        return result;
     }
 
     public boolean isPathValid(int fromID, int toID) {

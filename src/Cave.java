@@ -19,6 +19,15 @@ public class Cave {
 
     }
 
+    public int[] getAllRooms() {
+        int[] result = new int[rooms.size()];
+        int index = 0;
+        for (Integer roomID : rooms.keySet()) {
+            result[index++] = roomID.intValue();
+        }
+        return result;
+    }
+
     public boolean isPathValid(int fromID, int toID) {
         int[] paths = rooms.get(fromID);
 

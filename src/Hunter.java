@@ -14,5 +14,8 @@ public class Hunter extends GamePiece {
         super(cave, roomID);
     }
 
-    public void
+    public void move() {
+        int destination = IO.inputMoveTo(cave.getPaths(roomID));
+        setRoomID(destination);
+    }
 }

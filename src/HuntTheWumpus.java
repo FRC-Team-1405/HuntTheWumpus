@@ -4,6 +4,7 @@ public class HuntTheWumpus {
         Pit pit = new Pit(cave, 1);
         Wumpus wumpus = new Wumpus(cave, 3);
         Bat bat = new Bat(cave, 2);
+        Hunter hunter = new Hunter(cave, 3)1;
 
         System.out.println(pit);
         pit.move();
@@ -17,5 +18,8 @@ public class HuntTheWumpus {
         bat.move();
         System.out.println(bat);
 
+        System.out.println(hunter);
+        hunter.move();
+         System.out.println(hunter);
     }
 }

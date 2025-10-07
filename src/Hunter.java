@@ -15,4 +15,11 @@ public class Hunter extends GamePiece {
         super(cave, roomID);
     }
 
+    public void move() {
+        int destination = IO.inputMoveTo(cave.getPaths(roomID));
+
+        if (cave.isPathValid(this.roomID, destination))
+        setRoomID(destination);
+    }
 }
+

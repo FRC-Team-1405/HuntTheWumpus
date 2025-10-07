@@ -1,4 +1,4 @@
-public class GamePiece {
+public abstract class GamePiece {
     protected int roomID;
     protected Cave cave;
 
@@ -20,9 +20,7 @@ public class GamePiece {
         return cave.getPaths(roomID);
     }
 
-    public void move() {
-        // does nothing-- will make sense later
-    };
+    public abstract void move();
 
     public String toString() {
         return String.format("Room:   %3d", roomID);

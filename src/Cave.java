@@ -14,9 +14,21 @@ public class Cave {
         rooms.put(Integer.valueOf(3), new int[] { 2, 12, 4 });
     }
 
-    public int[] getpaths(int roomID) {
+    public int[] getPaths(int roomID) {
         return rooms.get(Integer.valueOf(roomID));
     }
+
+    public int[] getAllRooms() {
+        int[] result = new int[rooms.size()];
+        int index = 0;
+        for (Integer roomID : rooms.keySet()) {
+            result[index] = roomID.intValue();
+            index = index + 1;
+        }
+        return result;
+    }
+
+
 
     public boolean isPathValid(int fromID, int toID) {
         int[] paths = rooms.get(fromID);

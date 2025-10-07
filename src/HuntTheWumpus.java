@@ -1,15 +1,21 @@
 public class HuntTheWumpus {
     public static void main(String[] args) {
         Cave cave = new Cave();
-        int[] rooms = cave.getpaths(1);
+        Pit pit = new Pit(cave, 1);
+        Wumpus wumpus = new Wumpus(cave, 3);
+        Bat bat = new Bat(cave, 2);
 
-        boolean pathExists = cave.isPathValid(1, 5);
-
-        System.out.println(rooms[0]);
-        System.out.println(rooms[1]);
-        System.out.println(rooms[2]);
-
-        System.out.println("Hello");
+        System.out.println(pit);
+        pit.move();
+        System.out.println(pit);
+        
+        System.out.println(wumpus);
+        wumpus.move();
+        System.out.println(wumpus);
+        
+        System.out.println(bat);
+        bat.move();
+        System.out.println(bat);
 
     }
 }
